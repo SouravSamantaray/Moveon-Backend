@@ -12,7 +12,10 @@ const rideRoutes = require('./routes/ride.routes');
 
 connectToDb();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://moveon-frontend-zbfz.vercel.app', 
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
